@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var typed = new Typed(".text", {
+                strings: ["a Data Analyst", "an Excel Specialist", "a Business Analyst"],
+                typeSpeed: 100,
+                backSpeed: 100,
+                backDelay: 1000,
+                loop: true
+            });
+        });
+    </script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+    body {
+        color: #ededed;
+        background: #081b29;
+    }
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 10%;
+        background: #051129;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        animation: slideTop 0.5s ease forwards;
+    }
+    .logo {
+        position: relative;
+        font-size: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: default;
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+    }
+    .akash a {
+        display: inline-block;
+        font-size: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 35px;
+        transition: 0.3s;
+        opacity: 0;
+        animation: slideTop 0.5s ease forwards;
+    }
+    .akash a:hover {
+        color: #0ef;
+    }
+    .home {
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+        min-height: 100vh;
+        background: url(./Wallpaper.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 70px 10% 0;
+    }
+    .home-content {
+        max-width: 600px;
+    }
+    .home-content h3 {
+        font-size: 32px;
+        font-weight: 700;
+        opacity: 0;
+        animation: slideBottom 0.7s ease forwards;
+        animation-delay: 0.7s;
+    }
+    .home-content h3:nth-of-type(2) {
+        margin-bottom: 30px;
+    }
+    .home-content h3 span {
+        color: #0ef;
+    }
+    .home-content h1 {
+        font-size: 56px;
+        font-weight: 700;
+        margin: -3px 0;
+        opacity: 0;
+        animation: slideLeft 0.7s ease forwards;
+        animation-delay: 0.7s;
+    }
+    .home-content p {
+        font-size: 20px;
+        opacity: 0; 
+        animation: slideLeft 0.7s ease forwards;
+        animation-delay: 0.7s;
+    }
+    .home-sci a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 2px solid #0ef;
+        border-radius: 50%;
+        font-size: 20px;
+        color: #0ef;
+        text-decoration: none;
+        transition: 0.5s ease;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: calc(0.2s * var(--i));
+        margin: 30px 15px 30px 0;
+    }
+    .home-sci a:hover {
+        background-color: #0ef;
+        color: #081b29;
+        box-shadow: 0 0 20px #0ef;
+    }
+    .btn-box {
+        display: inline-block;
+        padding: 12px 28px;
+        background: #0ef;
+        border-radius: 40px;
+        font-size: 16px;
+        color: #081b29;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-weight: 600;
+        opacity: 0;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 2s;
+        box-shadow: 0 0 50px #0ef, 0 0 25px #0ef;
+    }
+    .btn-box:hover {
+        box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+    }
+    .about {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .about-img img {
+        padding-bottom: 20%;
+        max-width: 630px;
+        height: auto;
+        width: 100%;
+        border-radius: 50%;
+    }
+    .about-text h2 {
+        font-size: 60px;
+    }
+    .about-text h2 span {
+        color: #081b29;
+    }
+    .about-text h4 {
+        font-size: 29px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 0.7;
+        margin: 15px 0 30px;
+    }
+    .about-text p,
+    #services {
+        color: aliceblue;
+        font-size: 20px;
+        line-height: 1;
+        margin-bottom: 4rem;
+    }
+    .sub-title {
+        text-align: center;
+        font-size: 60px;
+        padding-bottom: 70px;
+        margin-top: 20px;
+    }
+    .sub-title span {
+        color: #0ef;
+    }
+    .container {
+        padding: 0;
+    }
+    .services-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+    }
+    .services-list div {
+        background-color: transparent;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 13px;
+        border-radius: 20px;
+        transition: background 0.5s, transform 0.5s;
+        box-shadow: 1px 1px 20px #012290f7, 1px 1px 40px #0053b8f7;
+    }
+    .services-list div i {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .services-list div h2 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    .services-list div a {
+        text-decoration: none;
+        color: #000;
+        font-size: 12px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    .read {
+        display: inline-block;
+        padding: 12px 20px;
+        background: #0ef;
+        border-radius: 40px;
+        font-size: 16px;
+        color: #081b29;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.5s;
+    }
+    .read:hover {
+        box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+    }
+   .services-list div:hover{
+             transform: translateY(-10px);
+        }
+        section{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .container1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 3rem;
+            padding: auto;
+        }
+
+        .heading1 {
+           text-align: center;
+           text-decoration: underline;
+           text-underline-offset: 10px;
+           text-decoration-thickness: 5px;
+           margin-bottom: 50px;
+        }
+
+        .bar {
+            font-size: 23px;
+        }
+
+        .Technical-bars .bar {
+          margin-top: 40px ;
+        }
+
+        .Technical-bars .bar:first-child {
+          margin-top: 0;
+        }
+
+        .Technical-bars .bar:last-child {
+           margin-bottom: 0;
+        }
+
+        .Technical-bars .bar .info {
+           margin-bottom: 5px;
+        }
+
+        .Technical-bars .bar .info span {
+           font-size: 17px;
+           font-weight: 500;
+           animation: showText 0.5s 1s linear forwards;
+           opacity: 0;
+        }
+
+        .Technical-bars .bar .progress-line {
+          position: relative;
+          border-radius: 20px;
+          width: 100%;
+          height: 5px;
+          background-color: #000;
+          animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+
+        @keyframes animate {
+         100% {
+                transform: scaleX(1);
+              }
+        }
+
+        .Technical-bars .bar .progress-line span {
+           height: 100%;
+           background-color: #0ef;
+           position: absolute;
+           border-radius: 10px;
+           animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards; /* Reuse the existing animation */
+           transform: scaleX(0);
+           transform-origin: left;
+        }
+
+        .progress-line.SQL span {
+           width: 75%;
+        }
+
+        .progress-line.Python span {
+           width: 70%;
+        }
+
+        .progress-line.Excel span {
+          width: 90%;
+        }
+
+        .progress-line.Googlesheets span {
+            width: 75%;
+        }
+
+        .progress-line.PowerBI span {
+            width: 85%; 
+        }
+        .progress-line span::after {
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+            animation: showText 0.5s 1.5s linear forwards;
+            opacity: 0;
+        }
+
+        .progress-line.SQL span::after {
+            content: "75%";
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+    /* width: 75%; */
+        }
+
+        .progress-line.Python span::after {
+            content: "70%";
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+    
+        }
+
+        .progress-line.Excel span::after {
+            content: "90%";
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+    
+        }
+
+        .progress-line.Googlesheets span::after {
+            content: "75%";
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+    
+        }
+
+        .progress-line.PowerBI span::after {
+            content: "85%";
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+    
+        }
+
+        .progress-line span::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            top: -10px;
+            right: 0;
+            animation: showText 0.5s 1.5s linear forwards;
+            opacity: 0;
+        }
+
+        @keyframes showText {
+            100% {
+                opacity: 1;
+                }
+        }
+
+        .radial-bars {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .radial-bars .radial-bar {
+            width: 50%;
+            height: 170px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .radial-bars .radial-bar svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: 120px;
+            height: 160px;
+        }
+
+        .radial-bars .radial-bar .progress-bar {
+            stroke-width: 10;
+            stop-color: black;
+            fill: transparent;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 502;
+            stroke-linecap: round;
+            animation: animate-bar 1s linear forwards;
+        }
+
+        @keyframes animate-bar {
+            100% {
+                    stroke-dashoffset: -1;
+                }
+        }
+
+        .path {
+            stroke-width: 10;
+            stroke: #0ef;
+            fill: transparent;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 502;
+            stroke-linecap: round;
+        }
+
+        .path-1 {
+            animation: animate-path1 1s 1s linear forwards;
+        }
+
+        .path-2 {
+            animation: animate-path2 1s 1s linear forwards;
+        }
+
+        .path-3 {
+            animation: animate-path3 1s 1s linear forwards;
+        }
+
+        .path-4 {
+            animation: animate-path4 1s 1s linear forwards;
+        }
+
+        @keyframes animate-path1 {
+            100% {
+                stroke-dashoffset: 50;;
+                }
+        }
+
+        @keyframes animate-path2 {
+            100% {
+                stroke-dashoffset: 175;;
+                }
+        }
+
+        @keyframes animate-path3 {
+            100% {
+                stroke-dashoffset: 60;;
+                }
+        }
+
+        @keyframes animate-path4 {
+            100% {
+                stroke-dashoffset: 75;;
+                }
+        }
+
+        .radial-bar .percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 17px;
+            font-weight: 500;
+            animation: showText 0.5s 1s linear forwards;
+            opacity: 0;
+        }
+
+        .radial-bar .text {
+            width: 100%;
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50px);
+            font-size: 17px;
+            font-weight: 500;
+            animation: showText 0.5s 1s linear forwards;
+            opacity: 0;
+        }
+    .contact{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 3rem;
+            padding-left: 30px;
+            margin-top: 130px;
+        }
+        .contact-text h2{
+            font-size: 90px;
+            line-height: 1;
+            text-align: center;
+        }
+        .contact-text h2 span{
+            color: #0ef;
+        }
+        .contact-text h4{
+            margin: 15px 0;
+            color: rgb(228, 228, 228);
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .contact-text p{
+            color: rgb(177, 177, 177);
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 2rem;
+        }
+        .contact-list{
+            margin-bottom: 3rem;
+        }
+        .contact-list li{
+            margin-bottom: 10px;
+            display: block;
+        } 
+        .contact-list li{
+            margin-bottom: 10px;
+            display: block;
+        }
+        .contact-list i{
+            display: inline-block;
+            color: #0ef;
+            font-weight:600 ;
+            transition: all .40s ease;
+        }
+        .contact-list li a:hover{
+            transform: scale(1.01) translateY(-5px);
+            color: #0ef;
+        }
+        .contact-icons i{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #0ef;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #0ef;
+            text-decoration: none;
+            margin: 30px 15px 30px 0;
+            transition: .5s ease;
+            opacity: 0;
+            animation: slideleft 1s ease forwards;
+            animation-delay: calc(.2s*var(--i));
+        }
+        .contact-icons i:hover{
+            background: #0ef;
+            color: #000;
+            box-shadow: 0 0 20px #0ef;
+        }
+        .contact-form form{
+            position: relative;
+        }
+        .contact-form form input, .contact-form form textarea{
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 18px;
+            background: #555557;
+            color: #000;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        .contact-form form textarea{
+            resize: none;
+            height: 220px;
+        }
+        .contact-form form .send{
+            display: inline-block;
+            padding: 14px 60px ;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 18px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 1;
+            animation: slidTop 1s ease forwards;
+            animation-delay: 2s;
+            box-shadow: 0 0 50px #0ef,
+            0 0 25px #0ef;
+
+        }
+        .contact-form form .send:hover{
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+        }
+    @keyframes slideTop {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideBottom {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideLeft {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @media (max-width: 1024px) {
+    .home {
+        padding: 70px 5% 0;
+    }
+    .header {
+        padding: 20px 5%;
+    }
+    .logo {
+        font-size: 20px;
+    }
+    .akash a {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    .home-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    .about-img img {
+        padding-bottom: 10%;
+    }
+    .services-list div {
+        padding: 30px;
+    }
+    .services-list div i {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .services-list div h2 {
+        font-size: 24px;
+    }
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-left: 0;
+        margin-top: 60px;
+    }
+    .contact-text h2 {
+        font-size: 50px;
+    }
+    .contact-icons i {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        margin: 15px 10px 15px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 5%;
+    }
+    .logo {
+        font-size: 18px;
+    }
+    .akash a {
+        font-size: 18px;
+        margin-left: 15px;
+    }
+    .home {
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+        min-height: 100vh;
+        background: url(./Wallpaper.png) no-repeat;
+        background-size: relative;
+        background-position: center;
+        display: flex;
+        align-items: center;
+
+    }
+    .home-content h3,
+    .home-content h1,
+    .home-content p {
+        font-size: 1.7rem;
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .about-img img {
+        max-width: 400px;
+    }
+    .about-text h2 {
+        font-size: 40px;
+    }
+    .about-text h4 {
+        font-size: 24px;
+    }
+    .contact-text h2 {
+        font-size: 40px;
+    }
+    .contact-icons i {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+        margin: 10px 5px 10px 0;
+    }
+    .contact-form form .send {
+        padding: 12px 50px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h3,
+    .home-content h1,
+    .home-content p {
+        font-size: 1.5rem;
+    }
+    .about-img img {
+        max-width: 300px;
+    }
+    .about-text h2 {
+        font-size: 30px;
+    }
+    .about-text h4 {
+        font-size: 20px;
+    }
+    .contact-text h2 {
+        font-size: 30px;
+    }
+    .contact-icons i {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        margin: 8px 5px 8px 0;
+    }
+    .contact-form form .send {
+        padding: 10px 40px;
+        font-size: 14px;
+    }
+}
+      
+    
+</style>
+
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <div class="akash">
+            <a href="#home" style="--i:1" class="active">Home</a>
+            <a href="#about" style="--i:2" class="active">About Me</a>
+            <a href="#Services" style="--i:5" class="active">Services</a>
+            <a href="#skills" style="--i:3" class="active">Skill</a>
+            <a href="#Projects" style="--i:4" class="active">Projects</a>
+            <a href="#contact" style="--i:5" class="active">Contact</a>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h4></h4>
+            <h1>Akash Kumar Agarwal</h1>
+            <h3>And I'm <span class="text"></span></h3>
+            <p>I'm a Data analyst with extensive experience for over 6 years in various domains.
+                <br>expertise to create Interactive Dashboards, Data Cleaning, and understanding customer needs and many more......</br>
+            </p>
+            <div class="home-sci">
+                <a href="https://www.facebook.com/profile.php?id=100005081017381&mibextid=ZbWKwl" style="--i:7"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAQlJREFUSEvtlLFOAkEQhr8/hBgqcwc2PIJ2FhQ2NDwAidE30EBJQ0VDYW8niS0dNMTWgsJWHwATS02EO56AjOGyBSboHQeXULDVJrvzfbszuyMyHsqYz54JAjtD3AEVoAR8An18df7KRPIbTK1Mjg/g6BdMDPF0tb0gtAegsQY0wNf1LgSvwLkDjfGoIS3iHknyFIX2DZw4YBNfvTj4cn0TwQwoRlDjlqIetxcEtsztaQQSbaDgoE8Yb072QknP6WowtyHG5b8nFS083WcpqONplE4QWBdRdcEXQN6la4LxFc1z3HCs93SC1ajQpu737rDIB8GGH+1Qg5jOkvkzTdLZ1uxJ3k33VfADPaZcGR8qebYAAAAASUVORK5CYII="/></i></a>
+                <a href="https://www.instagram.com/akash_agarwal4444?utm_source=qr&igsh=NnB1c2RjcTRkOHlm" style="--i:8"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAjNJREFUSEvFlT1oFFEQx3+zlyghoNkXgmhhoyKi5weJpVpZKimiIGhjaVDQQixEEAuLgJwQK9uIsQgSK7GRw0a0iUGCICkOBMGY3YMYEC+7I++yd9l9dysX5MhUu28+/m/mPzNP6LJIl+OzRQBV3UfMLeAUcARyL6LAZ+AdBUrslK9uRVozCPQaUAJ6N1m+Gso4g/I07ZcFqOowMR8Ab5PBG+ZrCCP48qlxkAUI9CUw2nFw5QfbKFLjAjBZ9xNm8GUsD6AC7G0D8A14iLBAzCDCQeAOUMFIkaqOEPMx8VvEyP48gF9AvwPwhogxhmSF7zpU1+2WJZb1MMJrYBVhAGVX4reCkR2tAKoeIZETfAk4gGKDXQbOALZzyihTCIV6B2VlDSPNBtngQLWXkD+O8QRGbhPoE8B2V1omMXKdQF8B51KKCCM97TLoIaSWCSFcxWOWiHIyD2n1PEaOEeo9lPspRYwRm1nCeeNLVQiJnVuOs8o0/bwFjjq6OYycINS7KA8yOiPNyrhtauublimMXGFZHyPccLIr4ctNAp0Fzqd0ORxYi0BdAJvRcWL6KHAJOF2nWCgT8RyP7W1I/o2RvtYSrQO0a9MKwii+zGUyCNTuqWlgj5N1FSN+HoBdVs0hyRAHMygLSDJoylkncOP3C0YO5QG8AC7mOHZ6/AwjdmacLrK/P/UkHu//a9nBMEbm2wOs89DFdd2AzT44xX/UZuPB8XjEgCy6tlv0ZHZKZwd2Xc/gL+g6qhmRE67+AAAAAElFTkSuQmCC"/></a>
+                <a href="https://wa.me/919304692946" style="--i:9"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAArFJREFUSEvNlUtIVGEUx39nJnuZNveOix5KFCVFQaVobYoQ0iJo0wMShCQKelhE4KI2BbWI3JQVQSAGtQhsIYRU9qAiKElqU0ZgkrUIde6VpJLKOc13nRHHmTvTRvBbXe53vvO753/+37nCJC+Z5PxMAcCglhJlN7ARKAZGgBfAK4T7WPImkwr+FUS0COE6UAUMASZRF8owwlpgNTAXaMDiFCK/04HSA/q1mCBPgBkIxwlxExFNSeBqHUoD8AllJ2F5NzEmFdCn85jGa0+KABWEpDujERxdBbQCAYZZyQL5OT4+FeBoG1BOgDJC0sOALgTyKJAPvqBRSCfQhC0H/QGObgCeoewjLE0M6AoCXjX9WCxOK1Mim6MngXMolYSlPfE6uQJHG4FaLCxE/uBoPXDeC1aqCMsD3yq+6CxyGUJpJSw7/ABvgV5s2e4FOHoIuOI9iwFLc5Z+mPNgyxo/wNeY/m3YcsAL6Nf5BOkBXCyKEPmbBXANqMaW/PSAiH5E6MSWPWOJRq14CbiKxZEsfTByHsOWmX4V3ENMB2Rd0pc6ehu829yKUkeU2QRpRmkiSAshceOSmrgSbFnmBzgL1JNDIXnSNwZRDcZEuhgT7TDw3euIse7ouoAt9agGcBlAuIMl+9MDBnUJUbpRzhCW0yl6R3Qz4sm1PL4XRdni2dLRauDWRLelu2jGCSPYUurb0EEtQcmPOeuzdxldXUSUDoQubNk0/lwy4JvmMh0XoRFLTmR0TGLTJFcexoFl2NLrD3B0G3AXqAFM+ZUIL/nBDYrkVxIwooUE2ItyFMUMworsw87Ry/FGJnKZ6bgUMKP4KdDjJRPKgfXxoOcEqPUbiskSudqOek1+TA6PyJcIfTqHHHahbAWMfa2YZd97MytKCwXSkUnKKfDL/K9O+wdNegX/AF2y5xn/P7e2AAAAAElFTkSuQmCC"/></i></a>
+                <a href="https://www.linkedin.com/in/akash-agarwal-70215798?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="--i:10"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAWRJREFUSEvtlb1KA0EUhb+7gYBVsmPEStAIphAFsfIHLHwM8QUEC8HGyl4QRPANJI8hFiIo1iJB/KuEkI2x0EKzV7LZbHazIugoFjqwMHOXPd+5Z2ZY4YeH/LA+acCDFlF8XLn5DngS4OkusBoIC9u4sm4L6QKqWiLDRUJQGMaVWxtIF/CoJV5TgBHbqHoj2gNWAsfKDv2yZuO+nXTvqOoYWXxycmkrngbUdBaHbCDc5JmCnATzuk4BubD+REFOaajBZx5lAiGDQ/k9U8kO6nqPMhg6v8LIaDD39AiYC09XBWUTKPck4AMbGNmKd/55AHhAX/ikU3RYJC8HnRdfAXS+bYHugEnAiZHKGFmyBexjZDncnwWUwxjgHCPjdoAmJQakEol62upkKFw3MJK3A7hkEXmJADU9Q5iO1kai6D/ag2uMFFOnqFVwcRDRWAfHwMw/oH3R/nhE6YtvXfmFn76156TAG+CmvRlcHhn0AAAAAElFTkSuQmCC"/></a>
+                <a href="mailto:a.k.agarwal395@gmail.com" style="--i:11"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAXNJREFUSEvtlb8vQ1EUgL+DiIREvSYGMZAYJEb/gcRk0IQFiYnFWBImC4OhNViY/dhYJDYj/gPpZCNpIvq6EWl75L60r6/P06uPbr3byzn3+8459773hDYvaTOfjsA64fqIijpDmROEBMIpCXYQKVkJtQRX51H2gF5gDUfuTKguKOgLMBIA3lNikWHJN5Wo9lDkAGUzkPeEIxNhgUaAXlFSJOUhUuLqGBUuEaa/xR3xig92ECUwOSWUbZJy2ABxNYVyBgxEylsQ1PZf88ky75QZ5AhYbzq6GALDy1W7nrQefkyBlesnWAXCLYqpdNRCfUbIocw25FkFkAH2gQtg7gfJDbCCsIuSbk0gZBmSLW9TQTeALNBXhXwAaRw59p5dzf5NYCBvOoVw5QGVBZLy6Ff8LwJDy2u/d03HxXRQX65mQm8yWM8gOCLb3fllB2Wgy2e1Jgh3UMGR7vCn4hxY8iXxBRXv5jmy2iiwjSFmvPPLtA7uC9PNjBlAR4Y9AAAAAElFTkSuQmCC"/></a>
+            </div>
+            <a href="https://drive.google.com/file/d/1-2gwDq7LGwPUMLQFcfLODJ3a5kaKOLdM/view?usp=drivesdk" class="btn-box">Download My Resume</a>
+        </div>
+        <spam class="home-imgHover"></spam>
+    </section>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="newimage.png">
+        </div>
+        <div class="about-text">
+            <h2>Akash Kumar Agarwal<br></h4>Data Analyst | Mechanical Engineer</h4></h2><h4></h4>
+            <h3>About Me!</h3>
+            <details>
+                <summary></summary>
+                <p>I am a results-driven professional with a diverse background in mechanical engineering and business development. 
+                    My journey began with a Bachelor's degree in Mechanical Engineering from DIATM,
+                     followed by hands-on experience in various roles within reputable organizations.
+                      Over the years, I have honed my skills in customer relations, CAD design, project management, and leadership,
+                       all of which have contributed to my success in the industry</p>
+            </details>
+            <h3>Professional Experience :</h3>
+            <h4>Senior Business Development Executive | </h4><h4>Sahara India Pariwar</h4>
+            <details>
+            <p>During my tenure at Sahara India Pariwar,
+                 I spearheaded business development initiatives,
+                  leveraging my strong interpersonal skills to forge lasting relationships with clients and stakeholders.
+                   My ability to understand client requirements and deliver tailored solutions
+                    played a pivotal role in driving revenue growth for the organization</p>
+            </details>
+            <h4>Executive Design Engineer | Ahura Mazda</h4>
+            <details>
+            <p>In my role as an Executive Design Engineer,
+                 I transitioned into the realm of design engineering,
+                  where I collaborated with clients to conceptualize and create CAD designs for steel furniture products. 
+                  This experience enhanced my technical proficiency and provided me with valuable 
+                  insights into product development processes</p>
+            </details>
+            <h4>Site Incharge | United Infracore Limited</h4>
+            <details>
+            <p>As a Site Incharge at a vendor partner of Tata Steel,
+                 I oversaw day-to-day operations and ensured seamless execution of projects.
+                  My proactive approach to problem-solving and dedication to meeting deadlines
+                   earned me recognition within the organization, paving the way for career advancement opportunities</p>
+            </details>
+           <h4>General Manager | M/s S.K.BOSE</h4>
+            <details>
+           <p>My tenure as a General Manager further solidified my leadership skills as 
+            I managed a team of professionals and led strategic initiatives to optimize operational efficiency.
+             I thrived in a dynamic environment, adapting quickly to changing market dynamics and driving business growth through
+              innovation and collaboration.</p>
+            </details>
+         <h3>Transition to Data Analysis:</h3>
+         <details>
+         <p>Driven by a passion for leveraging technology and data to drive informed decision-making, 
+            I made a strategic career pivot towards data analysis.
+             Recognizing the immense potential of data in today's digital landscape,
+              I equipped myself with proficiency in Python, SQL, Excel, Google Sheets, and Power BI.
+               This transition represents a culmination of my past experiences and my commitment to continuous 
+               learning and professional growth</p>
+            </details>
+            <h3>Personal Attributes:</h3>
+            <details>
+               <p>I am known for my strong work ethic, resilience, and adaptability.
+                 I thrive in challenging environments and am always eager to take on new challenges and learn new skills. 
+                 My proactive approach to problem-solving, coupled with effective communication skills,
+                  enables me to collaborate effectively with cross-functional teams and deliver results that exceed expectations</p>
+                </details>      
+        </div>
+        
+    </section>
+
+    <section>
+        <div class="services" id="Services">
+            <div class="container">
+                <h1 class="sub-title">My <span>Services</span></h1>
+                <div class="services-list">
+                    <div>
+                        <i class=""></i>
+                        <h2>Data Collection and Cleaning</h2>
+                        <p> We gather data from various sources, including databases, spreadsheets, and APIs after that
+                             we clean and preprocess the data to ensure its accuracy and consistency.</p>
+                             <a href="#" class="read">Lern more</a>
+                    </div>
+                    <div>
+                        <i class=""></i>
+                        <h2>Data Exploration and Visualization</h2>
+                        <p>We use statistical techniques and visualization tools to explore datasets, identify patterns,
+                             trends, and correlations. Visual representations like charts, graphs, and dashboards
+                              make complex data more understandable.</p>
+                             <a href="#" class="read">Lern more</a>
+                    </div>
+                    <div>
+                        <i class=""></i>
+                        <h2>Data Interpretation and Reporting</h2>
+                        <p>After analyzing the data, we interpret the results and prepare comprehensive reports or presentations 
+                            to communicate their findings to stakeholders
+                            . They also provide recommendations for decision-making based on their analysis. </p>
+                             <a href="#" class="read">Lern more</a>
+                    </div>
+                    <div>
+                        <i class=""></i>
+                        <h2>Business Intelligence (BI) Support</h2>
+                        <p>They collaborate with business stakeholders to understand their requirements and provide
+                             insights that support strategic decision-making. This may involve creating customized
+                              reports or dashboards tailored to specific business needs.
+
+                        </p>
+                             <a href="#" class="read">Lern more</a>
+                    </div>
+                    <!-- <div>
+                        <i class=""></i>
+                        <h2>Power BI</h2>
+                        <p>Power BI is a business analytics tool developed by Microsoft that allows users to visualize and analyze data from various sources 
+                            to gain insights and make data-driven decisions.</p>
+                             <a href="#" class="read">Lern more</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+        <section></section>
+
+        <h1 class="sub-title">My<span>Skills</span></h1>
+
+        <section>
+           
+            <div class="container1" id="skills">
+              
+              
+                <div class="Technical-bars">
+                    <h1 class="heading1">Technical Skills</h1>
+                    <div class="bar"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUxJREFUSEvtlbFKA0EQhr8/+gBmCdiIhYJgoYhlEMVSUexELEWfQcFWwXdIbZHOQrBUEAkiWFgJBsXOJpcXMDeyGiUxyWU9OGyy5TE738z889+KjI8yzk8yoGZFcuwQs4iYBHLNgmJEFbimQYmCbnsV2h0Q2SpwDMwFdSjugH3yuvwd3wmIbBs4DUrcHhQDazhdtH7uBNTtDWM0BcBfecRpOhkQmaVM/nXNqa3obiPKHPAKjKfs4gWnieQR1WwTUU4B8CJv4HTeDzCGmAFOgNlAUAVxCDyTl5/Az+mmQZk8W0hGZAvAHlCET6N9xzeAJ+CKHCVGdI/ZEHXOcFrvB/Ai+10+wOkhqAPveHEELIdsUavIN4gS71QoUEXycwazYSKmEEvALjDfLGQg8kBkvwqZO9lDIltJ5eSgB6fVWX9xcg9H/vOjH/SfSA76ADiPkRmRhATxAAAAAElFTkSuQmCC"/>
+                        <div class="info">
+                            <span>SQL</span>
+                        </div>
+                        <div class="progress-line SQL">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAedJREFUSEvVlb1LW2EUh5+TqLV+YLy2LlUQdZDi0EmlCA6lUKGjQkUqKJkcHBWdBelf4KJotJZScHAQB9sOHVQoCBkF2wwqiNAgiA4m5phrory55iY3QsDe7Z6P33PPuec9r1DkR4qszyMARLUb+AR0Av50xZfADsIYtRLO1YXcFZzqGxKsA4vAUBL01CF2RimtVMuJGyQ3IKofgGnidFPCJtB+T0jpo05WHwoYBD7nGYQBLPnqHRDRcgJ0uYoqPwDfnV8YIkHLzbuyzjP5beZmtuhYK3nCT5QOz+OrBBHm0vExfLQRkL+3+ZmAqNrTMu5ZPBVot3HFyJnFklE3QCQ5MU0FAA6IM0gJv4ycveQ/aXMD2PNd6gAcAfsOmwLfuWIBP/PJM/HO8J9jSZVXwAZKCOE90JilMtvW7LBfYEmlG+AQeGEk2MJrxgn20r0wlrxyA4TSJzblF4ZRFryoGjEzWDKVHXCqzSTYBWpuAnwESdyNoBdOhDivqZfj7ADbeqb1xAiilOHjD8qSoRxHeOtCUgJsIRIz/fl20QDwJc+nF7gqTLV/2o/wLQsgzBW9+NkCJgvbRZmABoQ9oMIBOQeWgRGUHupkx63K/DdaVO0V/TF94bwEngN2n7dRJnKJpwaxyM//D7gGstt9GUSzRB4AAAAASUVORK5CYII="/>
+                        <div class="info">
+                            <span>Python</span>
+                        </div>
+                        <div class="progress-line Python">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAF9JREFUSEtjZKAxYKSx+Qx0tuDd//8EfNTDwMjAxPCfoQivOiFGuMNRfTBqASzcRoNoEKeit/8bCOSDY1B5K7zqhBnh5qDmA5pbMJrRRjMaAwPDiC+uaVBB07lOpoEPAIpuWBnrCjjbAAAAAElFTkSuQmCC"/>
+                        <div class="info">
+                            <span>Excel</span>
+                        </div>
+                        <div class="progress-line Excel">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAgtJREFUSEvllT1oFFEUhb+zKjEKOjNrJf4t2FhYKAZMEUwlgkJAsPYHDVpaCAoKWUHtgqWYGEURRLRJJQgqIU0UgoVYqQh2kp0xKP4k7l6dZXcyMzs7LshWeeV9595z733n8ESXj7pcn+VAENggxilgN7AZ+AG8AR7wk3ts1Pe8Nbdf0SfrZS0PgUM5BeYQ53B1px0mm8CsB59pxJ6ORGBcp6izWdhsgordRhxLJUwiHtdjxmFgKHEvjuLqbpqkleCLlajxIQZcwBiiqCeJ5MCOY9yChhKNz3hsQfoVx7USBHYJ43KqkwAxisMVJIvufDsPXIthz+DpRnuCOeujwAtgTebuxQQOJyMSswIB34DeBr6KMUxRE838pQnmbTtVXgJu24cV4zgMp6aYAgYSOTX2skEzYWyJwLerwIUYcOyv9icx+hAXgXFcTieKh2DfBjBOJEQhnuJqf5KgYq8iWYpHuDoSkQW2D4epluLxtn17C+xohObx5KQnqABeHSBGcFXuyANNkG83oe748PzGZTVSNb6i58BgAzCLSz/SQsckyQle42lXcoLARjHibnyPcb9uq7wjeoCdwMEIZpQpaiT9BpsQ08DWjrvOBn5lJSXWKVx56j8IbBvGbK5U89kXKXAAR89afdCMhH6oETo0lF8JWPWPiRYxPiJmWEGZ9XoXxy+HH+0/X7zrK/oD8i6VGV+aQksAAAAASUVORK5CYII="/>
+                        <div class="info">
+                            <span>Google Sheets</span>
+                        </div>
+                        <div class="progress-line Googlesheets">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><img src="https://powerapps.microsoft.com/images/application-logos/svg/powerbi.svg" alt="Power BI Logo" style="width:20px;height:20px; ">
+                        <div class="info">
+                            <span>Power BI</span>
+                        </div>
+                        <div class="progress-line PowerBI">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container1">
+                    <div class="redial-bar"></div>
+                    <h1 class="heading1">Professional Skills</h1>
+                    <div class="redial-bar">
+
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="profress-bar" cx="100" cy="100" r="80" fill="none" stroke="#000" stroke-width="10"></circle>
+                            <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">90%</div>
+                        <div class="text">creativity</div>
+                    </div>
+                    <div class="redial-bar">
+
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="profress-bar" cx="100" cy="100" r="80" fill="none" stroke="#000" stroke-width="10"></circle>
+                            <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">70%</div>
+                        <div class="text">Communication</div>
+                    </div>
+                    <div class="redial-bar">
+
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="profress-bar" cx="100" cy="100" r="80" fill="none" stroke="#000" stroke-width="10"></circle>
+                            <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">85%</div>
+                        <div class="text">Problem Solving</div>
+                    </div>
+                    <div class="redial-bar">
+
+                        <svg x="0px" y="0px" viewBox="0 0 200 200">
+                            <circle class="profress-bar" cx="100" cy="100" r="80" fill="none" stroke="#000" stroke-width="10"></circle>
+                            <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+                        </svg>
+                        <div class="percentage">80%</div>
+                        <div class="text">Teamwork</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+ </section><section>
+    <div class="Portfolio" id="Projects">
+        <div class="container3">
+            <h1 class="sub-title">Latest <span>Projects</span></h1>
+            <div class="services-list">
+                <div>
+                    <i class=""></i><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUxJREFUSEvtlbFKA0EQhr8/+gBmCdiIhYJgoYhlEMVSUexELEWfQcFWwXdIbZHOQrBUEAkiWFgJBsXOJpcXMDeyGiUxyWU9OGyy5TE738z889+KjI8yzk8yoGZFcuwQs4iYBHLNgmJEFbimQYmCbnsV2h0Q2SpwDMwFdSjugH3yuvwd3wmIbBs4DUrcHhQDazhdtH7uBNTtDWM0BcBfecRpOhkQmaVM/nXNqa3obiPKHPAKjKfs4gWnieQR1WwTUU4B8CJv4HTeDzCGmAFOgNlAUAVxCDyTl5/Az+mmQZk8W0hGZAvAHlCET6N9xzeAJ+CKHCVGdI/ZEHXOcFrvB/Ai+10+wOkhqAPveHEELIdsUavIN4gS71QoUEXycwazYSKmEEvALjDfLGQg8kBkvwqZO9lDIltJ5eSgB6fVWX9xcg9H/vOjH/SfSA76ADiPkRmRhATxAAAAAElFTkSuQmCC"/>
+                    <h2>Prpjects On SQL</h2>
+                    <p>SQL, or Structured Query Language, is a programming language used for managing relational databases.
+                         It's essential for storing, manipulating, and retrieving data in databases like MySQL, PostgreSQL, 
+                         SQL Server, Oracle, and others.</p>
+                         <a href="https://github.com/Akshagarwal395/Projects-on-SQL.git" class="read">See Projects</a>
+                </div>
+                <div>
+                    <i class=""></i><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAedJREFUSEvVlb1LW2EUh5+TqLV+YLy2LlUQdZDi0EmlCA6lUKGjQkUqKJkcHBWdBelf4KJotJZScHAQB9sOHVQoCBkF2wwqiNAgiA4m5phrory55iY3QsDe7Z6P33PPuec9r1DkR4qszyMARLUb+AR0Av50xZfADsIYtRLO1YXcFZzqGxKsA4vAUBL01CF2RimtVMuJGyQ3IKofgGnidFPCJtB+T0jpo05WHwoYBD7nGYQBLPnqHRDRcgJ0uYoqPwDfnV8YIkHLzbuyzjP5beZmtuhYK3nCT5QOz+OrBBHm0vExfLQRkL+3+ZmAqNrTMu5ZPBVot3HFyJnFklE3QCQ5MU0FAA6IM0gJv4ycveQ/aXMD2PNd6gAcAfsOmwLfuWIBP/PJM/HO8J9jSZVXwAZKCOE90JilMtvW7LBfYEmlG+AQeGEk2MJrxgn20r0wlrxyA4TSJzblF4ZRFryoGjEzWDKVHXCqzSTYBWpuAnwESdyNoBdOhDivqZfj7ADbeqb1xAiilOHjD8qSoRxHeOtCUgJsIRIz/fl20QDwJc+nF7gqTLV/2o/wLQsgzBW9+NkCJgvbRZmABoQ9oMIBOQeWgRGUHupkx63K/DdaVO0V/TF94bwEngN2n7dRJnKJpwaxyM//D7gGstt9GUSzRB4AAAAASUVORK5CYII="/>
+                    <h2>Projects on Python</h2>
+                    <p>Python is a versatile and widely-used programming language known for its simplicity and readability.</p>
+                         <a href="https://github.com/Akshagarwal395/Projects-on-python.git" class="read">See Projects</a>
+                </div>
+                <div>
+                    <i class=""></i><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAF9JREFUSEtjZKAxYKSx+Qx0tuDd//8EfNTDwMjAxPCfoQivOiFGuMNRfTBqASzcRoNoEKeit/8bCOSDY1B5K7zqhBnh5qDmA5pbMJrRRjMaAwPDiC+uaVBB07lOpoEPAIpuWBnrCjjbAAAAAElFTkSuQmCC"/>
+                    <h2>Projects on Excel</h2>
+                    <p>Excel is a powerful spreadsheet application developed by Microsoft, 
+                        widely used for various purposes ranging from basic data entry and calculations to 
+                        complex data analysis and visualization. </p>
+                         <a href="https://github.com/Akshagarwal395/Projects-on-Excel.git" class="read">See Projects</a>
+                </div>
+                
+                <div>
+                    <i class=""></i><img src="https://powerapps.microsoft.com/images/application-logos/svg/powerbi.svg" alt="Power BI Logo" style="width:20px;height:20px; ">
+                    <h2>Projects on Power BI</h2>
+                    <p>Power BI is a business analytics tool developed by Microsoft that allows users to visualize and analyze data from various sources 
+                        to gain insights and make data-driven decisions.</p>
+                         <a href="https://github.com/Akshagarwal395/PowerBI-Projects.git" class="read">See Projects</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact<span> Me</span></h2>
+            <h4>Let's work Together</h4>
+            <p>I'm thrilled that you've taken the time to review my portfolio,
+                 and I'm even more excited about the potential for collaboration between our organizations.
+                  Your interest in my work speaks volumes, and I'm genuinely enthusiastic about the possibility of joining forces. 
+                  I want to assure you that if given the opportunity, I'll bring my utmost dedication and
+                   expertise to your organization, aiming to become a valuable asset. 
+                   If you're intrigued by what you've seen and envision a prosperous future together,
+                    I'm eager to discuss further and explore how we can mutually benefit each other</p>
+                    <div class="contact-list">
+                        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAVxJREFUSEvdlb1KA0EUhb8bi4gIuoudWEiKCD5MBMXKgIKg2Ak2voGlhSIWgiLY2GjjgwiSSk1hJ2QtQsRmr+wfutndzLiyTaZb5tz73XNmmBUqXlJxf8YR4GkL5QhYKhlfBzjAlYegPhtRT9+A+ZLNk7IXXGkUATRW
+
+fQLbuHJjBfN0E+UUmAr1roTD5zlIAFFf5ZIBeyxIAMyuV51khitgPbVpAWgD5/FEHXxWmZMg35/1rk0muAeawADYAa7tHAQTfGgDP2ywDKQj83QL5SQe4IkaLWblmZ5GCRgdxAJU63gcA7thoXCBUgc2YitnOOwj8hV+GwFFJ+rpChran44lfYQ2jtylSgoByUYeIHETRXaL4lNjDUe6Gfm/ADb3tXRENs2tzqAoqiQmE8jooHKA7YSjdV1cWcx/Kn4XDrsJYhp126LaR+Cw+DU1AUwOh/bH8Y/2xwhM8soj+gYj64MZPEkGwAAAAABJRU5ErkJggg=="/> a.k.agarwal395@gmail.com</li>
+                        <li><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAbBJREFUSEvFlU0oBGEYx39P6yDKmhl74OAmUhwkBzflI8nFyU25EOJIiQuRgyOOcqHszUHJieTioJTD5oByk/WVErsezeZjdsxgdm3e27y97+83z/vO8x8hx0NyzOcfBKrCNWMoFbwwQkTus6kyvYIrLUJYB9reoPsYNCHylKkkXRDXI6DGBdvAoAuRZCYSt0A9IcoylvT+heABKPABjWPKTFCJu4JjoNoHsokpHdkK1oBuD0gMpRlLLrIV9ANLLsghebRQJFdB4fZ69xGVA+dpoCRVRCSWCfyrwJ6J6wbQ+QEUJjFk6u8EN1rPCwcO4CNKPZbYH8DnuNRSQswjbGHIit8LeGdRXBeAAcemM0K0EpaT1Ny9RnhmF6hKPSvTWDLhJfEWnGo+xeygNDg22T0yS5IoIaJArQu4iMEQImnN6p+md1pCgj2gMsD5r2LQg0jifc/3cR3XMEIUpSWAZBFTBn8nSJ2vCjcMo9gx4RcjTv8cpoz9XvC+0r7YBKModjMWelYkbFNMuzN5g//RbtUkSR/QCNQBZW8yO04asOTOKQ8uCHAZ3p0cEPDT8pxX8AoujXEZIA5SzQAAAABJRU5ErkJggg=="/> 9304692946</li>
+                    </div>
+                <div class="contact-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100005081017381&mibextid=ZbWKwl"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAgRJREFUSEu1lkuITmEYx3//aQoN5bwnNSHZWCiSJSlZTEhCLEQ2FJOFRlOyECZZKGIWLmUxGzULmSKXFVnIepbGpWRCyXeOxRSFeXTOfJc573fO8X3M9y7Pc/k9l/d53iM6fNRh/5QDzOYRsxfYBqwDVgIGvMcYB57gGEP6WRRoMSCy7cCNqtOyRN/SRT+L9TRPKR9QsfOIc22UbxrjFKGu+DbNgIoNIc624byhKgYINDzbNguIbCfwoMT5V8QgxnOcPqR6sV3GGKzaTAObcXpR89EAfLGFdPMG6C0A/OI3a1iiiYw8C0hEEwSsrTW+AYisH7hZEv0oTgfq8or10cVGjK3Ahoyd2E2g+8m32YCHwI4SwBmcLqbyiu1D3C3RvY3TUR/wEVhaaCROEuhate4DGFdLAOM4rfcB34H5cwT4hlPgA6aAHg/wGafirBLlyJ4BWzy7KZwWZQEVe41Y5Sl+wmlZ6UxENgks93Re4bTaz+AOcLCtDGZ21Y+mAIwRQh32AfuB0TnpQe41Nesm5h2wIhfS+i2qlyebwUzDkg36+D8AhrGJUC9rPvKW3TDiRBOklQyMC4TKLMpmgJmIuQWkk1g/fwdcwum0H1jxgxPboeq0hqlRMSDZAMdwepRX2vInc9IW0MMRjD2IMZyup04iOw7swriHY+TfnszS6Wpd2PG/ij+0DrcZ3U4dMwAAAABJRU5ErkJggg=="/></a>
+                    <a href="https://wa.me/919304692946"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAArFJREFUSEvNlUtIVGEUx39nJnuZNveOix5KFCVFQaVobYoQ0iJo0wMShCQKelhE4KI2BbWI3JQVQSAGtQhsIYRU9qAiKElqU0ZgkrUIde6VpJLKOc13nRHHmTvTRvBbXe53vvO753/+37nCJC+Z5PxMAcCglhJlN7ARKAZGgBfAK4T7WPImkwr+FUS0COE6UAUMASZRF8owwlpgNTAXaMDiFCK/04HSA/q1mCBPgBkIxwlxExFNSeBqHUoD8AllJ2F5NzEmFdCn85jGa0+KABWEpDujERxdBbQCAYZZyQL5OT4+FeBoG1BOgDJC0sOALgTyKJAPvqBRSCfQhC0H/QGObgCeoewjLE0M6AoCXjX9WCxOK1Mim6MngXMolYSlPfE6uQJHG4FaLCxE/uBoPXDeC1aqCMsD3yq+6CxyGUJpJSw7/ABvgV5s2e4FOHoIuOI9iwFLc5Z+mPNgyxo/wNeY/m3YcsAL6Nf5BOkBXCyKEPmbBXANqMaW/PSAiH5E6MSWPWOJRq14CbiKxZEsfTByHsOWmX4V3ENMB2Rd0pc6ehu829yKUkeU2QRpRmkiSAshceOSmrgSbFnmBzgL1JNDIXnSNwZRDcZEuhgT7TDw3euIse7ouoAt9agGcBlAuIMl+9MDBnUJUbpRzhCW0yl6R3Qz4sm1PL4XRdni2dLRauDWRLelu2jGCSPYUurb0EEtQcmPOeuzdxldXUSUDoQubNk0/lwy4JvmMh0XoRFLTmR0TGLTJFcexoFl2NLrD3B0G3AXqAFM+ZUIL/nBDYrkVxIwooUE2ItyFMUMworsw87Ry/FGJnKZ6bgUMKP4KdDjJRPKgfXxoOcEqPUbiskSudqOek1+TA6PyJcIfTqHHHahbAWMfa2YZd97MytKCwXSkUnKKfDL/K9O+wdNegX/AF2y5xn/P7e2AAAAAElFTkSuQmCC"/></a>
+                    <a href="https://www.instagram.com/akash_agarwal4444?utm_source=qr&igsh=NnB1c2RjcTRkOHlm"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAjNJREFUSEvFlT1oFFEQx3+zlyghoNkXgmhhoyKi5weJpVpZKimiIGhjaVDQQixEEAuLgJwQK9uIsQgSK7GRw0a0iUGCICkOBMGY3YMYEC+7I++yd9l9dysX5MhUu28+/m/mPzNP6LJIl+OzRQBV3UfMLeAUcARyL6LAZ+AdBUrslK9uRVozCPQaUAJ6N1m+Gso4g/I07ZcFqOowMR8Ab5PBG+ZrCCP48qlxkAUI9CUw2nFw5QfbKFLjAjBZ9xNm8GUsD6AC7G0D8A14iLBAzCDCQeAOUMFIkaqOEPMx8VvEyP48gF9AvwPwhogxhmSF7zpU1+2WJZb1MMJrYBVhAGVX4reCkR2tAKoeIZETfAk4gGKDXQbOALZzyihTCIV6B2VlDSPNBtngQLWXkD+O8QRGbhPoE8B2V1omMXKdQF8B51KKCCM97TLoIaSWCSFcxWOWiHIyD2n1PEaOEeo9lPspRYwRm1nCeeNLVQiJnVuOs8o0/bwFjjq6OYycINS7KA8yOiPNyrhtauublimMXGFZHyPccLIr4ctNAp0Fzqd0ORxYi0BdAJvRcWL6KHAJOF2nWCgT8RyP7W1I/o2RvtYSrQO0a9MKwii+zGUyCNTuqWlgj5N1FSN+HoBdVs0hyRAHMygLSDJoylkncOP3C0YO5QG8AC7mOHZ6/AwjdmacLrK/P/UkHu//a9nBMEbm2wOs89DFdd2AzT44xX/UZuPB8XjEgCy6tlv0ZHZKZwd2Xc/gL+g6qhmRE67+AAAAAElFTkSuQmCC"/></a>
+                    <a href="https://www.linkedin.com/in/akash-agarwal-70215798?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAWRJREFUSEvtlb1KA0EUhb+7gYBVsmPEStAIphAFsfIHLHwM8QUEC8HGyl4QRPANJI8hFiIo1iJB/KuEkI2x0EKzV7LZbHazIugoFjqwMHOXPd+5Z2ZY4YeH/LA+acCDFlF8XLn5DngS4OkusBoIC9u4sm4L6QKqWiLDRUJQGMaVWxtIF/CoJV5TgBHbqHoj2gNWAsfKDv2yZuO+nXTvqOoYWXxycmkrngbUdBaHbCDc5JmCnATzuk4BubD+REFOaajBZx5lAiGDQ/k9U8kO6nqPMhg6v8LIaDD39AiYC09XBWUTKPck4AMbGNmKd/55AHhAX/ikU3RYJC8HnRdfAXS+bYHugEnAiZHKGFmyBexjZDncnwWUwxjgHCPjdoAmJQakEol62upkKFw3MJK3A7hkEXmJADU9Q5iO1kai6D/ag2uMFFOnqFVwcRDRWAfHwMw/oH3R/nhE6YtvXfmFn76156TAG+CmvRlcHhn0AAAAAElFTkSuQmCC"/></a>
+                </div>
+
+    </div>
+</div>
+<div class="contact-form">
+    <form>
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="message" placeholder="Message"></textarea>
+        <input type="submit" value="Send" class="send">
+    </form>
+</div>
+</section>
+</section>
+<script>
+    const bars = document.querySelectorAll('.progress-line span');
+    bars.forEach(function(bar){
+        let percentage = bar.parentElement.parentElement.querySelector('.percentage');
+        let percentageValue = bar.parentElement.parentElement.getAttribute('data-value');
+        let currentWidth = 0;
+        let interval = setInterval(() => {
+            if(currentWidth >= percentageValue){
+                clearInterval(interval);
+                return;
+            }
+            currentWidth++;
+            bar.style.transform = `scaleX(${currentWidth / 100})`;
+            percentage.textContent = `${currentWidth}%`;
+        }, 10);
+    });
+</script>
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
